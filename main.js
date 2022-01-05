@@ -10,22 +10,22 @@ function init() {
   })
   app.project.on('html-exported', filename => {
     console.log('teste', filename)
-    if(!localStorage.repository) {
+    if(!localStorage[filename]) {
       app.dialogs.showInputDialog("Digite a URL do repositório").then(function ({buttonId, returnValue}) {
         if (buttonId === 'ok') {
-          localStorage.repository = returnValue
-          if(localStorage.repository) {
-            console.log(`cd ${filename} && git init && git add origin ${localStorage.repository}`)
-            execute(`cd ${filename} && git init && git add origin ${localStorage.repository}`, (output) => {
+          localStorage[filename] = returnValue
+          if(localStorage[filename]) {
+            console.log(`cd ${filename} && cd .. && git init && git add origin ${localStorage[filename]}`)
+            execute(`cd ${filename} && cd .. && git init && git add origin ${localStorage[filename]}`, (output) => {
                 console.log(output);
             });
           }
         }
       })
     }
-    if(localStorage.repository) {
-      console.log(`cd ${filename} && git add . && git commit -m 'auto' && git push -u origin master`)
-      execute(`cd ${filename} && git add . && git commit -m 'auto' && git push -u origin master`, (output) => {
+    if(localStorage[filename]) {
+      console.log(`cd ${filename} && cd .. && git add . && git commit -m 'auto' && git push -u origin master`)
+      execute(`cd ${filename} && cd .. && git add . && git commit -m 'auto' && git push -u origin master`, (output) => {
           console.log(output);
       });
     }
