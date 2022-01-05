@@ -1,0 +1,23 @@
+{
+  "name": "albreis.gitpush",
+  "title": "Git Push",
+  "description": "Push HTML Docs to remote repository",
+  "homepage": "https://github.com/albreus/staruml-gitpush",
+  "version": "1.0.0",
+  "keywords": [
+    "staruml",
+    "gitpush"
+  ],
+  "author": {
+    "name": "ER Soluções Web LTDA",
+    "email": "contato@ersolucoesweb.com.br",
+    "url": "https://github.com/albreis"
+  },
+  "license": "MIT",
+  "engines": {
+    "staruml": ">=3.0.0"
+  },
+  "dependencies": {
+    "rsync": "^0.6.1"
+  }
+}

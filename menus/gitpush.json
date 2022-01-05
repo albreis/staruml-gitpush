@@ -1,0 +1,14 @@
+{
+  "menu": [
+    {
+      "id": "tools",
+      "submenu": [
+        {
+          "label": "Git Push",
+          "id": "tool.gitpush",
+          "command": "gitpush:deploy"
+        }
+      ]
+    }
+  ]
+}
